@@ -1,0 +1,22 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "MachoGeekWare",
+    "longName": "My Watchface",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "My Watchface",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "6481fb75-d02a-401a-a5b2-712078775578",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
