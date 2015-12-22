@@ -65,6 +65,7 @@ static void update_time() {
   // Get a tm structure
   time_t temp = time(NULL);
   struct tm *tick_time = localtime(&temp);
+  GRect prev_bound;
 
   // Day of Week
   static char s_dow[11];
@@ -74,16 +75,6 @@ static void update_time() {
   new_bound.size.h = 14;
   layer_set_bounds(text_layer_get_layer(s_dow_text_layer), new_bound);
   
-  // Time
-  static char s_time[9];
-  strftime(s_time, sizeof(s_time), "%l:%M %p", tick_time);
-  text_layer_set_text(s_time_text_layer, s_time);
-  GRect prev_bound = new_bound;
-  new_bound = layer_get_bounds(text_layer_get_layer(s_time_text_layer));
-  new_bound.origin.y = prev_bound.size.h;
-  new_bound.size.h = 15;
-  layer_set_bounds(text_layer_get_layer(s_time_text_layer), new_bound);
-  
   // Date
   static char s_date[12];
   strftime(s_date, sizeof(s_date), "%B %e", tick_time);
@@ -91,8 +82,18 @@ static void update_time() {
   prev_bound = new_bound;
   new_bound = layer_get_bounds(text_layer_get_layer(s_date_text_layer));
   new_bound.origin.y = (prev_bound.origin.y + prev_bound.size.h);
-  new_bound.size.h = 20;
+  new_bound.size.h = 14;
   layer_set_bounds(text_layer_get_layer(s_date_text_layer), new_bound);
+  
+  // Time
+  static char s_time[9];
+  strftime(s_time, sizeof(s_time), "%l:%M %p", tick_time);
+  text_layer_set_text(s_time_text_layer, s_time);
+  prev_bound = new_bound;
+  new_bound = layer_get_bounds(text_layer_get_layer(s_time_text_layer));
+  new_bound.origin.y = (prev_bound.origin.y + prev_bound.size.h);
+  new_bound.size.h = 20;
+  layer_set_bounds(text_layer_get_layer(s_time_text_layer), new_bound);
   
   // Battery
   static char s_battery[30];
