@@ -7,7 +7,26 @@
     "longName": "My Watchface",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "images/bluetooth_disconnected.png",
+                "name": "IMAGE_BLUETOOTH_DISCONNECTED",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/bluetooth_connected.png",
+                "name": "IMAGE_BLUETOOTH_CONNECTED",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/bare_frame.png",
+                "name": "IMAGE_BATTERY_BASE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            }
+        ]
     },
     "sdkVersion": "3",
     "shortName": "My Watchface",
